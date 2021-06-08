@@ -12,6 +12,7 @@ const registerSchema = Joi.object({
 
 // SIGN UP  USER
 exports.create = async (req, res) => {
+    console.log("this was called")
     //CHECKING IF USE EMAIL ALREADY EXISTS
     const emailExist = await UserModel.findOne({
         email: req.body.email

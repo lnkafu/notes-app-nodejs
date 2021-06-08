@@ -2,8 +2,6 @@
 
 const express = require("express");
 
-// Importing Module body Parasr -> used for parsing the data
-// const bodyParser = require("body-parser");
 
 const cors = require('cors');
 
@@ -51,9 +49,10 @@ app.use(express.json(), cors());
 
 
 // Requiring note routes
-require('./app/routes/note.routes')(app);
-require('./app/routes/auth.routes')(app);
+  require('./app/routes/note.routes')(app);
+ require('./app/routes/auth.routes')(app);
 
+require('./app/routes/login.routes')(app)
 
 // Define a simple route
 app.get('/', (req, res) => {
